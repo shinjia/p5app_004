@@ -1,8 +1,8 @@
  function setup()
 {
- 	createCanvas(windowWidth, windowHeight);
-    background(220, 220, 160);
-	strokeWeight(8)
+ 	createCanvas(displayWidth, displayHeight);
+  background(220, 220, 160);
+	strokeWeight(10)
 	stroke(0);
 }
 
@@ -16,6 +16,10 @@ function touchMoved()
 
 function windowResized()
 {
-  resizeCanvas(windowWidth, windowHeight);
+  
+  var physicalScreenWidth = window.screen.width * window.devicePixelRatio;
+  var physicalScreenHeight = window.screen.height * window.devicePixelRatio;
+  
+  resizeCanvas(physicalScreenWidth, physicalScreenHeight);
   background(220, 220, 160);
 }
